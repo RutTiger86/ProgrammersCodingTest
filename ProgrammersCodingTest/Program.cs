@@ -1,4 +1,5 @@
-﻿using ProgrammersCodingTest.DFS;
+﻿using ProgrammersCodingTest.BFS;
+using ProgrammersCodingTest.DFS;
 
 namespace ProgrammersCodingTest
 {
@@ -6,7 +7,8 @@ namespace ProgrammersCodingTest
     {
         public static void Main(string[] args)
         {
-            AlgorithmDFSCall();
+            //AlgorithmDFSCall();
+            AlgorithmBFSCall();
         }
 
         private static void  AlgorithmDFSCall()
@@ -24,6 +26,25 @@ namespace ProgrammersCodingTest
             {
                 Console.WriteLine(s);
             }
+        }
+
+        private static void AlgorithmBFSCall()
+        {
+            string[] words = new string[6] { "hot", "dot", "dog", "lot", "log", "cog" };
+
+            int answer = AlgorithmBFS.BFSSolution("hit", "cog", words);
+            Console.WriteLine(answer);
+
+
+            string[] words2 = new string[5] { "hot", "dot", "dog", "lot", "log" };
+
+            int answer2 = AlgorithmBFS.BFSSolution("hit", "cog", words2);
+            Console.WriteLine(answer2);
+
+            string[] words3 = new string[2] { "abb", "aba" };
+
+            int answer3 = AlgorithmBFS.BFSSolution("aab", "aba", words3);
+            Console.WriteLine(answer3);
         }
 
     }
