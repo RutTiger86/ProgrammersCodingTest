@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgrammersCodingTest.BFS
 {
-    public class AlgorithmBFS
+    public class WordConversion
     {
 
         private static List<int> BFSanswer = new List<int>();
