@@ -1,4 +1,5 @@
 ﻿using ProgrammersCodingTest._2021DevMatching;
+using ProgrammersCodingTest._2021KakaoIntern;
 using ProgrammersCodingTest.BFS;
 using ProgrammersCodingTest.DFS;
 using ProgrammersCodingTest.Stack_Queue;
@@ -12,8 +13,25 @@ namespace ProgrammersCodingTest
             //AlgorithmDFSCall();
             //AlgorithmBFSCall();
             //AlgorithmStack_Queue();
-            _2021DevMatching();
+            //_2021DevMatching();
+            _KakaoIntern();
         }
+
+        private static void _KakaoIntern()
+        {
+            KeepDistance kd = new KeepDistance();
+
+            string[,] places = {{"POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"}, {"POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"}, {"PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"}, {"OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"}, {"PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"}};
+            //string[,] places = { { "XXXXX", "XXXXX", "XPOPX", "XXXXX", "XXXXX" } };
+
+            int[] result =  kd.solution(places);
+
+            foreach (int s in result)
+            {
+                Console.WriteLine(s);
+            }
+        }
+
         private static void _2021DevMatching()
         {
             int[,] queries1 = { {2,2,5,4},{3,3,6,6},{5,1,6,3} };
