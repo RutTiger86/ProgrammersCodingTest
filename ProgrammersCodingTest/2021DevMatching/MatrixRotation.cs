@@ -45,6 +45,7 @@ namespace ProgrammersCodingTest._2021DevMatching
                 cPoint TP = PointList[i];
 
                 int MinValue = int.MaxValue;
+                //차라리 모두 팝하고 하나씩 다시 넣자  그게 좋겠네 ㅡㅡ;
 
                 int[][] Tempmatrix = (int[][])matrix.Clone();
 
