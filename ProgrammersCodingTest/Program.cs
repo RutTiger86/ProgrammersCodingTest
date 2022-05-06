@@ -25,21 +25,21 @@ namespace ProgrammersCodingTest
             }
 
 
-            //int[,] queries2 = { { 1, 1, 2, 2 }, { 1, 2, 2, 3 }, { 2, 1, 3, 2 }, { 2, 2, 3, 3 } };
+            int[,] queries2 = { { 1, 1, 2, 2 }, { 1, 2, 2, 3 }, { 2, 1, 3, 2 }, { 2, 2, 3, 3 } };
 
-            //int[] result2 = MatrixRotation.solution(3, 3, queries2);
-            //foreach (int s in result2)
-            //{
-            //    Console.WriteLine(s);
-            //}
+            int[] result2 = MatrixRotation.solution(3, 3, queries2);
+            foreach (int s in result2)
+            {
+                Console.WriteLine(s);
+            }
 
-            //int[,] queries3 = { { 1, 1, 100, 97 }};
+            int[,] queries3 = { { 1, 1, 100, 97 } };
 
-            //int[] result3 = MatrixRotation.solution(100, 97, queries3);
-            //foreach (int s in result3)
-            //{
-            //    Console.WriteLine(s);
-            //}
+            int[] result3 = MatrixRotation.solution(100, 97, queries3);
+            foreach (int s in result3)
+            {
+                Console.WriteLine(s);
+            }
 
 
         }

@@ -44,58 +44,86 @@ namespace ProgrammersCodingTest._2021DevMatching
             {
                 cPoint TP = PointList[i];
 
-                int MinValue = int.MaxValue;
-                //차라리 모두 팝하고 하나씩 다시 넣자  그게 좋겠네 ㅡㅡ;
+                Queue<int> Targetlist = CreateTargetData(TP, matrix);
 
-                int[][] Tempmatrix = (int[][])matrix.Clone();
-
-                for (int x = TP._x1; x < TP._x2; x++)
-                {
-                    int temp = Tempmatrix[x][TP._y1];
-
-                    matrix[x + 1][TP._y1] = temp;
-
-                    if (MinValue > Tempmatrix[x][TP._y1])
-                    {
-                        MinValue = Tempmatrix[x][TP._y1];
-                    }
-                }
-
-                for (int y = TP._y1; y < TP._y2; y++)
-                {
-                    matrix[TP._x2][y+1] = Tempmatrix[TP._x2][y];
-
-                    if (MinValue > Tempmatrix[TP._x2][y])
-                    {
-                        MinValue = Tempmatrix[TP._x2][y];
-                    }
-                }
-
-                for (int x = TP._x2; x > TP._x1; x--)
-                {
-                    matrix[x - 1][TP._y2] = Tempmatrix[x][TP._y2];
-
-                    if (MinValue > Tempmatrix[x][TP._y2])
-                    {
-                        MinValue = Tempmatrix[x][TP._y2];
-                    }
-                }
-
-                for (int y = TP._y2; y > TP._y1; y--)
-                {
-                    matrix[TP._x1][y - 1] = Tempmatrix[TP._x1][y];
-
-                    if (MinValue > Tempmatrix[TP._x1][y])
-                    {
-                        MinValue = Tempmatrix[TP._x1][y];
-                    }
-                }
-
-                answer.Add(MinValue);
+                answer.Add(Rotation(Targetlist,TP,matrix));
             }
 
-
             return answer.ToArray();
+        }
+        public static int Rotation(Queue<int> Targetlist, cPoint TP, int[][] matrix)
+        {
+            int MinValue = int.MaxValue;
+
+            for (int y = TP._y1 + 1; y <= TP._y2; y++)
+            {
+                int temp = Targetlist.Dequeue();
+                if (MinValue > temp)
+                {
+                    MinValue = temp;
+                }
+                matrix[TP._x1][y] = temp;
+            }
+
+            for (int x = TP._x1 + 1; x <= TP._x2; x++)
+            {
+                int temp = Targetlist.Dequeue();
+                if (MinValue > temp)
+                {
+                    MinValue = temp;
+                }
+                matrix[x][TP._y2] = temp;
+            }
+
+            for (int y = TP._y2 - 1; y >= TP._y1; y--)
+            {
+                int temp = Targetlist.Dequeue();
+                if (MinValue > temp)
+                {
+                    MinValue = temp;
+                }
+                matrix[TP._x2][y] = temp;
+            }
+
+            for (int x = TP._x2 - 1; x >= TP._x1; x--)
+            {
+                int temp = Targetlist.Dequeue();
+                if (MinValue > temp)
+                {
+                    MinValue = temp;
+                }
+                matrix[x][TP._y1] = temp;
+            }
+
+            return MinValue;
+        }
+
+
+        public static Queue<int> CreateTargetData(cPoint TP, int[][] matrix)
+        {
+            Queue<int> Targetlist = new Queue<int>();
+
+            for (int y = TP._y1; y <= TP._y2; y++)
+            {
+                Targetlist.Enqueue(matrix[TP._x1][y]);
+            }
+
+            for (int x = TP._x1 + 1; x <= TP._x2; x++)
+            {
+                Targetlist.Enqueue(matrix[x][TP._y2]);
+            }
+
+            for (int y = TP._y2 - 1; y >= TP._y1; y--)
+            {
+                Targetlist.Enqueue(matrix[TP._x2][y]);
+            }
+
+            for (int x = TP._x2 - 1; x > TP._x1; x--)
+            {
+                Targetlist.Enqueue(matrix[x][TP._y1]);
+            }
+
+            return Targetlist;
         }
 
         public class cPoint
@@ -108,11 +136,11 @@ namespace ProgrammersCodingTest._2021DevMatching
 
             public cPoint(int Row1, int Column1, int Row2, int Column2)
             {
-                _x1 = Column1-1;
-                _y1 = Row1-1;
+                _x1 = Row1 - 1;
+                _y1 = Column1 - 1;
 
-                _x2 = Column2-1;
-                _y2 = Row2-1;
+                _x2 = Row2 - 1;
+                _y2 = Column2 - 1;
             }
         }
 
