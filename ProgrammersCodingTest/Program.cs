@@ -1,9 +1,11 @@
 ﻿using ProgrammersCodingTest._2021DevMatching;
 using ProgrammersCodingTest._2021KakaoIntern;
 using ProgrammersCodingTest.BFS;
+using ProgrammersCodingTest.BinarySearch;
 using ProgrammersCodingTest.DFS;
 using ProgrammersCodingTest.DynamicProgramming;
 using ProgrammersCodingTest.ExhaustiveSearch;
+using ProgrammersCodingTest.Greedy;
 using ProgrammersCodingTest.Hash;
 using ProgrammersCodingTest.Sort;
 using ProgrammersCodingTest.Stack_Queue;
@@ -22,8 +24,33 @@ namespace ProgrammersCodingTest
             //AlgorithmHashCall();
             //AlgorithmExhaustiveSearch();
             //AlgorithmSort();
-            AlgorithmDynamicProgramming();
+            //AlgorithmDynamicProgramming();
+            AlgorithmGreedy();
+            //AlgorithmBinarySearch();
         }
+
+        private static void AlgorithmBinarySearch()
+        {
+            Immigration ir = new Immigration();
+
+            Console.WriteLine(ir.solution(6,new int[]{7,10}));
+        }
+
+        private static void AlgorithmGreedy()
+        {
+            //LostReserve Lr = new LostReserve();
+            //Console.WriteLine(Lr.solution(5,new int[]{ 2,4}, new int[] { 1,3,5}));
+            //Console.WriteLine(Lr.solution(5, new int[] { 2, 4 }, new int[] { 3 }));
+            //Console.WriteLine(Lr.solution(3, new int[] { 3}, new int[] { 1 }));
+
+            BigNumber bi = new BigNumber();
+
+            Console.WriteLine(bi.solution("1924",2));
+            Console.WriteLine(bi.solution("1231234", 3));
+            Console.WriteLine(bi.solution("4177252841", 4));
+
+        }
+
 
         private static void AlgorithmDynamicProgramming()
         {
