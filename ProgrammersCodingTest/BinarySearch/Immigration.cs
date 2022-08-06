@@ -28,9 +28,9 @@ namespace ProgrammersCodingTest.BinarySearch
         /// <param name="n"></param>
         /// <param name="times"></param>
         /// <returns></returns>
-        public long solution(int n, int[] times)
+        public long solution(int n, int[] times)// 이분법 
         {
-            Array.Sort(times);
+            Array.Sort(times);// 크기순으로 정렬 
             long max = (long)times[times.Length - 1] * (long)n;     //가장 느린 사람 혼자 상대했을 경우
             long min = 0;                               //대기인원이 원래 없는 경우
             long mid;

@@ -24,22 +24,22 @@ namespace ProgrammersCodingTest.Greedy
         public string solution(string number, int k) 
         {
             string answer = "";
-            number = "9" + number;
+            number = "9" + number;// 이전 값과의 오류 방지를 위하여 9추가(나중에 제거 ) 9는 무조건 크다
             StringBuilder sb = new StringBuilder(number);
 
             int index = 0;
-            for (int i = 0; i < k; i++)
+            for (int i = 0; i < k; i++)// 빼는 횟수 
             {
                 while (true)
                 {
-                    if (index + 1 == sb.Length)
+                    if (index + 1 == sb.Length)//길이+1이 전체 길이 와 같으면
                     {
-                        sb.Remove(index, 1);
+                        sb.Remove(index, 1);// 
                         index--;
                         break;
                     }
 
-                    if (sb[index] < sb[index + 1])
+                    if (sb[index] < sb[index + 1])// 지금 값보다 다음 값이 크면 
                     {
                         sb.Remove(index, 1);
                         index--;
@@ -49,7 +49,7 @@ namespace ProgrammersCodingTest.Greedy
                 }
             }
 
-            return answer = sb.Remove(0, 1).ToString();
+            return answer = sb.Remove(0, 1).ToString();// 첫번재꺼 빼고 전달 
         }
 
     }

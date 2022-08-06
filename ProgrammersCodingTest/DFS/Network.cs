@@ -44,8 +44,8 @@ namespace ProgrammersCodingTest.DFS
                 }
                 else
                 {
-                    answer++;
-                    check(i, n, computers);
+                    answer++;//네트워크 발견 
+                    check(i, n, computers);// 처음 가보는곳 확인 
                 }
             }
 
@@ -54,7 +54,7 @@ namespace ProgrammersCodingTest.DFS
 
         private static void check(int index, int n, int[,] computers)
         {
-            conn[index] = 1;
+            conn[index] = 1;// 방문기록 남기기 
             for (int i = 0; i < n; i++)
             {
                 if (computers[index, i] == 1 && conn[i] == 0)

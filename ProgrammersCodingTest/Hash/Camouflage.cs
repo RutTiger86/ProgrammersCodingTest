@@ -45,10 +45,10 @@ namespace ProgrammersCodingTest.Hash
             
             foreach(var groupClth in ClthInfList.GroupBy(p => p._Type))
             {
-                answer = answer * (groupClth.Count()+1);
+                answer = answer * (groupClth.Count()+1);// 입지 않은 경우 추가 
             }
 
-            answer = answer - 1;
+            answer = answer - 1;// 아무것도 안입었을때는 빼자
 
             return answer;
         }

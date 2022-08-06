@@ -48,6 +48,8 @@ namespace ProgrammersCodingTest.DFS
 
             RouteList = new List<string>();
 
+            int[] bulbs = new int[10];
+
             CalcRoute("ICN", "ICN", ticketList);
 
             return RouteList.OrderBy(p => p).First().Split('|');
@@ -55,8 +57,20 @@ namespace ProgrammersCodingTest.DFS
 
         public static void CalcRoute(string Source ,string NowRoute, List<string[]> ticketList)
         {
+            int[] bulbs = new int[10];
+            bulbs.All(p => p > 0);
+            bulbs.Count(p => p > 0);
+            bulbs.ToArray();
 
-            foreach(string[] Tour in ticketList.Where(p=>p[0].Equals(Source)))
+            int stp = 0;
+            int enp = 0;
+
+            for(int i= stp-1; i<enp; i++)
+            {
+
+            }
+
+            foreach (string[] Tour in ticketList.Where(p=>p[0].Equals(Source)))
             {
                 string TempRoute = NowRoute + $"|{Tour[1]}";
 

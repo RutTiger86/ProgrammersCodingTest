@@ -26,20 +26,20 @@ namespace ProgrammersCodingTest.ExhaustiveSearch
         /// <returns></returns>
         public int[] solution(int[] answers)
         {
-            int[] nRules1 = new int[] { 1, 2, 3, 4, 5 };
-            int[] nRules2 = new int[] { 2, 1, 2, 3, 2, 4, 2, 5 };
-            int[] nRules3 = new int[] { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
-            int[] nScores = new int[3];
-            for (int i = 0; i < answers.Length; i++)
+            int[] nRules1 = new int[] { 1, 2, 3, 4, 5 };// 첫번재 규칙
+            int[] nRules2 = new int[] { 2, 1, 2, 3, 2, 4, 2, 5 };// 두번째 규칙
+            int[] nRules3 = new int[] { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };// 세번째 규칙 
+            int[] nScores = new int[3];// 정답자 
+            for (int i = 0; i < answers.Length; i++)// 답안 수 만큼 검색 
             {
-                if (answers[i] == nRules1[i % nRules1.Length]) ++nScores[0];
-                if (answers[i] == nRules2[i % nRules2.Length]) ++nScores[1];
-                if (answers[i] == nRules3[i % nRules3.Length]) ++nScores[2];
+                if (answers[i] == nRules1[i % nRules1.Length]) ++nScores[0];// 첫번째 규칙 대로 했을때 맞으면 점수 +1
+                if (answers[i] == nRules2[i % nRules2.Length]) ++nScores[1];// 두번째 규칙 대로 했을때 맞으면 점수 +1
+                if (answers[i] == nRules3[i % nRules3.Length]) ++nScores[2];// 세번째 규칙 대로 했을때 맞으면 점수 +1
             }
             List<int> lstAnswer = new List<int>();
-            if (nScores[0] == nScores.Max()) lstAnswer.Add(1);
-            if (nScores[1] == nScores.Max()) lstAnswer.Add(2);
-            if (nScores[2] == nScores.Max()) lstAnswer.Add(3);
+            if (nScores[0] == nScores.Max()) lstAnswer.Add(1);// 최고점수가 첫번재면 1번 추가 
+            if (nScores[1] == nScores.Max()) lstAnswer.Add(2);// 최고점수가 두번재면 2번 추가 
+            if (nScores[2] == nScores.Max()) lstAnswer.Add(3);// 최고점수가 세번재면 3번 추가 
             return lstAnswer.ToArray();
         }
     }

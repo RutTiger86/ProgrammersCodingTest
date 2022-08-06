@@ -47,7 +47,7 @@ namespace ProgrammersCodingTest.Heep
             List<KeyValuePair<int,int>> T = new List<KeyValuePair<int, int>>();
             for (int x = 0; x < jobs.GetLength(0); x++)
             {
-                T.Add(new KeyValuePair<int, int>(jobs[x, 0], jobs[x, 1]));
+                T.Add(new KeyValuePair<int, int>(jobs[x, 0], jobs[x, 1]));// 요청 시간, 소요 시간 
             }
 
             for (int i = 0; ; i++)
@@ -56,18 +56,20 @@ namespace ProgrammersCodingTest.Heep
 
                 // 가장 먼저 수행할 잡 선택
                 var cJob = T.Where(x => x.Key <= i).OrderBy(y => y.Value).ToList();// 가용한 프로세스( 들어온시간) 확인 후 가장짧은것부터
-                if (cJob.Count == 0) continue;
+                if (cJob.Count == 0) continue;// 아직 할께 없으면 다음 으로 
 
                 // 실행시간 계산
-                answer += cJob[0].Key < i ? i - cJob[0].Key + cJob[0].Value : cJob[0].Value;
+                answer += cJob[0].Key < i ? // 입력시간이 진행 시간보다 작다면(지연 시작된거라면) 
+                    i - cJob[0].Key + cJob[0].Value // 지연시간 + 소요시간
+                    : cJob[0].Value;// 소요시간 
 
                 // 현재잡 종료시간 계산
-                i = i + cJob[0].Value - 1;
+                i = i + cJob[0].Value - 1;// 현자프로세스 종료시간으로 시간이동
                 // 현재잡 제거
-                T.Remove(cJob[0]);
+                T.Remove(cJob[0]);// 처리된 프로세스 삭제
             }
 
-            return answer / jobs.GetLength(0);
+            return answer / jobs.GetLength(0);//평균시간 
         }
     }
 }

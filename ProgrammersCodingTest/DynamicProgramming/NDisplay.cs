@@ -56,11 +56,11 @@ namespace ProgrammersCodingTest.DynamicProgramming
             for(int i= 0; i<(8-count); i++)
             {
                 temp = (temp * 10) + N; //N이 5면 ,,,    5 , 55, 555, 55555
-
-                DFS(N, number, count + i + 1, sum + temp);//위에 5를 한번 사용해서 +1 , 한번 돌때마다 5가 추가되니 i+, 상위 메소드에서 사용한 수량이 count
-                DFS(N, number, count + i + 1, sum - temp);
-                DFS(N, number, count + i + 1, sum * temp);
-                DFS(N, number, count + i + 1, sum / temp);
+                //한 For문당 4번 재귀 
+                DFS(N, number, count + i + 1, sum + temp);//더하고 위에 5를 한번 사용해서 +1 , 한번 돌때마다 5가 추가되니 i+, 상위 메소드에서 사용한 수량이 count
+                DFS(N, number, count + i + 1, sum - temp);//빼고
+                DFS(N, number, count + i + 1, sum * temp);//곱하고
+                DFS(N, number, count + i + 1, sum / temp);//나누고
 
             }
 

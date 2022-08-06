@@ -55,17 +55,17 @@ namespace ProgrammersCodingTest.BFS
         {
             foreach (char[] Words in GetTargetWordList(begin, wordsList))
             {
-                int Tempanswer = answer + 1;
-                if (new string(Words) == target)
+                int Tempanswer = answer + 1;// 횟수 추가 
+                if (new string(Words) == target)// 타겟 단어가 되면 스톱
                 {
-                    BFSanswer.Add(answer);
+                    BFSanswer.Add(answer);// 타겟 단어가 되면 여태까지의 횟수 기록
                     break;
                 }
                 else
                 {
                     List<char[]> tempwordsList = wordsList.ToList();
                     tempwordsList.Remove(Words);       
-                    BFS(Tempanswer,Words,target,tempwordsList);
+                    BFS(Tempanswer,Words,target,tempwordsList);// 사용단어 빼고 다시 검색 
                 }
 
             }
@@ -80,18 +80,18 @@ namespace ProgrammersCodingTest.BFS
                 int checkCount = 0;
                 for (int i = 0; i < word.Length; i++)
                 {
-                    if (begin[i] != word[i])
+                    if (begin[i] != word[i])// 위치별로 비교 필요 
                     {
-                        checkCount++;
+                        checkCount++;// 다른 단어 (두단어 이상 다르면안됨)
                     }
 
-                    if (checkCount > 1)
+                    if (checkCount > 1)// 두단어이상다름
                     {
                         break;
                     }
                 }
 
-                if (checkCount == 1)
+                if (checkCount == 1)// 한단어만 다름 
                 {
                     TargetWordList.Add(word);
                 }

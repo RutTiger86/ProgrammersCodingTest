@@ -25,9 +25,36 @@ namespace ProgrammersCodingTest
             //AlgorithmExhaustiveSearch();
             //AlgorithmSort();
             //AlgorithmDynamicProgramming();
-            AlgorithmGreedy();
+            //AlgorithmGreedy();
             //AlgorithmBinarySearch();
+            ProgrammersTest();
         }
+
+        private static void ProgrammersTest()
+        {
+            //int Result = ProgrammersLevelTest.Solution1.solution(6);
+            // Console.WriteLine(Result); 
+
+            //int Resule = ProgrammersLevelTest.Solution2.solution(5);
+            //Console.WriteLine(Resule);
+
+            //string Resule = ProgrammersLevelTest.Solution2.solution2("-10 -11 -9 -12 -13 -8 -1");
+            //Console.WriteLine(Resule);
+
+            //int Resule = ProgrammersLevelTest.SimpleTest.solution2("2three45sixseven");
+            //Console.WriteLine(Resule);
+
+            int[] Result = ProgrammersLevelTest.SimpleTest.solution3(new string[]{"S"});
+
+            string result = string.Empty;
+            foreach(int i in Result)
+            {
+                result += $"{i},";
+            }
+            Console.WriteLine(result);
+        }
+
+
 
         private static void AlgorithmBinarySearch()
         {
@@ -45,9 +72,12 @@ namespace ProgrammersCodingTest
 
             BigNumber bi = new BigNumber();
 
-            Console.WriteLine(bi.solution("1924",2));
-            Console.WriteLine(bi.solution("1231234", 3));
-            Console.WriteLine(bi.solution("4177252841", 4));
+
+            Console.WriteLine(bi.solution("1924", 3));
+
+            //Console.WriteLine(bi.solution("1924",2));
+            //Console.WriteLine(bi.solution("1231234", 3));
+            //Console.WriteLine(bi.solution("4177252841", 4));
 
         }
 

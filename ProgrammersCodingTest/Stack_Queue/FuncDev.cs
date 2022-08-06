@@ -33,17 +33,17 @@ namespace ProgrammersCodingTest.Stack_Queue
         {
             List<int> answer = new List<int>();
 
+
             List< WorkInfo > works = new List< WorkInfo >();
 
             for(int i = 0; i < progresses.Length; i++)
             {
                 works.Add(new WorkInfo(i, progresses[i], speeds[i]));
             }
-
             while(works.Count > 0)
             {
                 int Distcount = 0;
-                while(works.Count>0 && works.First().IsDevComplete)
+                while(works.First().IsDevComplete)
                 {
                     Distcount++;                  
                     works.RemoveAt(0);
@@ -83,7 +83,7 @@ namespace ProgrammersCodingTest.Stack_Queue
 
             public void AddDay()
             {
-                _progresses = _progresses + _speeds;
+                _progresses += _speeds;
             }
         }
     }

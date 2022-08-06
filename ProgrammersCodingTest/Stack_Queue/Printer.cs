@@ -39,7 +39,9 @@ namespace ProgrammersCodingTest.Stack_Queue
             {
                 prints.Enqueue(new PrintDoc(priorities[i], i));
             }
-            
+            prints.Dequeue();
+
+
             while (prints.Count > 0)
             {
                 PrintDoc PD = prints.Dequeue();

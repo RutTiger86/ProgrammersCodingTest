@@ -47,6 +47,11 @@ namespace ProgrammersCodingTest.ExhaustiveSearch
             }
         }
 
+        /// <summary>
+        /// 소수 공식 기억 
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         public bool IsPrime(int num)
         {
             if(num <2)

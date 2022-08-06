@@ -30,30 +30,30 @@ namespace ProgrammersCodingTest._2021KakaoIntern
                     {
                         if (matrix[y][x].Equals('P'))
                         {
-                            checkMatrix [y][x] = checkMatrix[y][x]-1;
+                            checkMatrix [y][x] = checkMatrix[y][x]-1;// 자기위치
                             if (y-1>0)
                             {
-                                checkMatrix[y-1][x] = checkMatrix[y-1][x] - 1;
+                                checkMatrix[y-1][x] = checkMatrix[y-1][x] - 1;// 위에 한칸
                             }
 
                             if(y+1<5)
                             {
-                                checkMatrix[y+1][x] = checkMatrix[y+1][x] - 1;
+                                checkMatrix[y+1][x] = checkMatrix[y+1][x] - 1;// 아래 한칸
                             }
 
                             if(x-1>0)
                             {
-                                checkMatrix[y][x-1] = checkMatrix[y][x-1] - 1;
+                                checkMatrix[y][x-1] = checkMatrix[y][x-1] - 1;// 왼쪽한칸
                             }
 
                             if(x+1<5)
                             {
-                                checkMatrix[y][x+1] = checkMatrix[y][x+1] - 1;
+                                checkMatrix[y][x+1] = checkMatrix[y][x+1] - 1;// 오른쪽 한칸
                             }
                             
                         }else if (matrix[y][x].Equals('X'))
                         {
-                            checkMatrix[y][x] = checkMatrix[y][x] +100;
+                            checkMatrix[y][x] = checkMatrix[y][x] +100;// 칸막이 방어력 100
                         }
                     }
                 }
@@ -63,7 +63,7 @@ namespace ProgrammersCodingTest._2021KakaoIntern
                 {
                     for (int x = 0; x < 5; x++)
                     {
-                        if(checkMatrix[y][x] < -1)
+                        if(checkMatrix[y][x] < -1)// -2인 (영향이 겹치는) 공간 이 있으면 안됨
                         {
                             Result = 0;
                             break;

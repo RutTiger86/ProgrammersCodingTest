@@ -8,6 +8,14 @@ namespace ProgrammersCodingTest.Stack_Queue
 {
     public class TruckBridge
     {
+
+        /// <summary>
+        /// 트럭 다리 문제 인데 큐에 넣고 트럭과 빈공간 0을 넣어서 밀면서 처리하는것도 방법 
+        /// </summary>
+        /// <param name="bridge_length"></param>
+        /// <param name="weight"></param>
+        /// <param name="truck_weights"></param>
+        /// <returns></returns>
         public int solution(int bridge_length, int weight, int[] truck_weights)
         {
             int answer = 0;
